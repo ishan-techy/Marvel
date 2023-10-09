@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {
   Image,
   ScrollView,
@@ -8,12 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Text} from 'react-native';
-const {width, height} = Dimensions.get('window');
-
-const yosemite =
-  'https://images.unsplash.com/photo-1548625361-1adcab316530?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80';
-const islandBali =
-  'https://images.unsplash.com/photo-1445262102387-5fbb30a5e59d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80';
+const {width} = Dimensions.get('window');
 
 const API = () => {
   return (
@@ -29,8 +24,8 @@ const API = () => {
           <View style={styles.detail}>
             <View style={styles.detailContainer}>
               <Text style={styles.heading}>Iron Man</Text>
-              <Text style={{color: 'grey'}}>Tony Stark</Text>
-              <Text style={{marginTop: 10}}>
+              <Text style={styles.subName}>Tony Stark</Text>
+              <Text style={styles.intro}>
                 With genius and gadgets, I am Iron Man, armor-clad defender.
               </Text>
             </View>
@@ -46,8 +41,8 @@ const API = () => {
           <View style={styles.detail}>
             <View style={styles.detailContainer}>
               <Text style={styles.heading}>Hulk</Text>
-              <Text style={{color: 'grey'}}>Bruce Banner</Text>
-              <Text style={{marginTop: 10}}>
+              <Text style={styles.subName}>Bruce Banner</Text>
+              <Text style={styles.intro}>
                 In rage and might, I'm the Hulk, smashing foes with strength.
               </Text>
             </View>
@@ -63,8 +58,8 @@ const API = () => {
           <View style={styles.detail}>
             <View style={styles.detailContainer}>
               <Text style={styles.heading}>Spider Man</Text>
-              <Text style={{color: 'grey'}}>Peter Parker</Text>
-              <Text style={{marginTop: 10}}>
+              <Text style={styles.subName}>Peter Parker</Text>
+              <Text style={styles.intro}>
                 Swinging through the city, I'm Spider-Man, your friendly
                 neighborhood hero.
               </Text>
@@ -81,8 +76,8 @@ const API = () => {
           <View style={styles.detail}>
             <View style={styles.detailContainer}>
               <Text style={styles.heading}>Captian America</Text>
-              <Text style={{color: 'grey'}}>Steve Rogers</Text>
-              <Text style={{marginTop: 10}}>
+              <Text style={styles.subName}>Steve Rogers</Text>
+              <Text style={styles.intro}>
                 Shield in hand, I'm Captain America, symbol of justice and
                 freedom.
               </Text>
@@ -99,8 +94,8 @@ const API = () => {
           <View style={styles.detail}>
             <View style={styles.detailContainer}>
               <Text style={styles.heading}>Thor</Text>
-              <Text style={{color: 'grey'}}>Thor Odinson</Text>
-              <Text style={{marginTop: 10}}>
+              <Text style={styles.subName}>Thor Odinson</Text>
+              <Text style={styles.intro}>
                 Mjolnir's power, I am Thor, thunder god of Asgard's realm.
               </Text>
             </View>
@@ -116,8 +111,8 @@ const API = () => {
           <View style={styles.detail}>
             <View style={styles.detailContainer}>
               <Text style={styles.heading}>Doctor Strange</Text>
-              <Text style={{color: 'grey'}}>Stephen Strange</Text>
-              <Text style={{marginTop: 10}}>
+              <Text style={styles.subName}>Stephen Strange</Text>
+              <Text style={styles.intro}>
                 Master of mystic arts, Doctor Strange, protector of dimensions
                 unseen.
               </Text>
@@ -134,8 +129,8 @@ const API = () => {
           <View style={styles.detail}>
             <View style={styles.detailContainer}>
               <Text style={styles.heading}>Black Pnather</Text>
-              <Text style={{color: 'grey'}}>T'Challa</Text>
-              <Text style={{marginTop: 10}}>
+              <Text style={styles.subName}>T'Challa</Text>
+              <Text style={styles.intro}>
                 Wakanda's king, Black Panther, stealth and strength combined
                 with honor.
               </Text>
@@ -150,16 +145,12 @@ const API = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9F9F9',
+    backgroundColor: '#F2F2F2',
   },
   card: {
     height: width * 0.5,
     borderRadius: 10,
     margin: 14,
-    shadowColor: '#171717',
-    shadowOffset: {width: -7, height: 10},
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
   },
   img: {
     width: width * 0.32,
@@ -179,10 +170,6 @@ const styles = StyleSheet.create({
     right: 0,
     borderRadius: 20,
     overflow: 'hidden',
-    shadowColor: '#171717',
-    shadowOffset: {width: 4, height: 4},
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
     borderWidth: 2,
   },
   detailContainer: {
@@ -193,9 +180,17 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   heading: {
+    color: '#000',
     fontSize: 24,
     marginTop: 10,
     fontWeight: 'bold',
+  },
+  subName: {
+    color: 'grey',
+  },
+  intro: {
+    color: '#000',
+    marginTop: 10,
   },
 });
 

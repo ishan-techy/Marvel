@@ -3,18 +3,15 @@ import {
   Text,
   StyleSheet,
   Dimensions,
-  Button,
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
 import LottieView from 'lottie-react-native';
 import {useNavigation} from '@react-navigation/native';
-//import TouchID from 'react-native-touch-id';
 import {setItem} from '../utils/asyncStorage';
-//import {Alert} from 'react-native';
 
-const {width, height} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 export default function OnboardingScreen() {
   const navigation = useNavigation();
 
@@ -24,22 +21,8 @@ export default function OnboardingScreen() {
   };
 
   const doneButton = ({...props}) => {
-    // const authenticate = () => {
-    //   TouchID.authenticate('to demo this react-native component')
-    //     .then(success => {
-    //       // Success code
-    //       Alert.alert('hello');
-    //     })
-    //     .catch(error => {
-    //       // Failure code
-    //       console.log('Failed');
-    //     });
-    // };
     return (
-      <TouchableOpacity
-        // onPress={() => authenticate}
-        style={styles.doneButton}
-        {...props}>
+      <TouchableOpacity style={styles.doneButton} {...props}>
         <Text>Authenticate</Text>
       </TouchableOpacity>
     );
@@ -52,7 +35,7 @@ export default function OnboardingScreen() {
         onSkip={handleDone}
         DoneButtonComponent={doneButton}
         bottomBarHighlight={false}
-        containerStyles={{paddingHorizontal: 20}}
+        containerStyles={styles.cs}
         pages={[
           {
             backgroundColor: '#ffb5a7',
@@ -138,4 +121,5 @@ const styles = StyleSheet.create({
     borderTopStartRadius: 30,
     padding: 20,
   },
+  cs: {paddingHorizontal: 20},
 });

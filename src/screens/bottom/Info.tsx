@@ -1,6 +1,6 @@
 import {View, Text, StyleSheet, Dimensions, Image} from 'react-native';
 import React from 'react';
-const {width, height} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 const Info = () => {
   return (
     <View style={styles.container}>
@@ -51,6 +51,7 @@ const Info = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    color: '#000',
   },
   card: {
     flex: 1,
@@ -76,6 +77,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     fontSize: 35,
     fontWeight: 'bold',
+    color: '#000',
   },
   icons: {
     flex: 2,
@@ -99,6 +101,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 0,
     paddingBottom: 10,
+    color: '#000',
   },
 });
 

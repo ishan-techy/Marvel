@@ -3,11 +3,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import React, {useEffect, useState} from 'react';
 import HomeScreen from '../screens/HomeScreen';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {getItem} from '../utils/asyncStorage.js';
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 
 export default function AppNavigation() {
   const [showOnboarding, setShowOnboarding] = useState(null);
@@ -18,10 +16,8 @@ export default function AppNavigation() {
   const checkIfAlreadyOnboarded = async () => {
     let onboarded = await getItem('onboarded');
     if (onboarded == 1) {
-      // hide onboarding
       setShowOnboarding(false);
     } else {
-      // show onboarding
       setShowOnboarding(true);
     }
   };

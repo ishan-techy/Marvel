@@ -15,7 +15,7 @@ export default function AppNavigation() {
 
   const checkIfAlreadyOnboarded = async () => {
     let onboarded = await getItem('onboarded');
-    if (onboarded == 1) {
+    if (onboarded === '1') {
       setShowOnboarding(false);
     } else {
       setShowOnboarding(true);

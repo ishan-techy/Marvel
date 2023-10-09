@@ -59,12 +59,7 @@ const SettingOptions = {
 const BottomNavigator = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen
-        name="API"
-        component={API}
-        options={APIOptions}
-        headerTitleAlign={'center'}
-      />
+      <Tab.Screen name="API" component={API} options={APIOptions} />
       <Tab.Screen name="Me" component={Info} options={MeOptions} />
       <Tab.Screen name="Setting" component={Setting} options={SettingOptions} />
     </Tab.Navigator>
